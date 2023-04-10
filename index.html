@@ -4,34 +4,36 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
     <title>Fuel Calculate</title>
   <script defer src="main.bundle.js"></script><link href="main.css" rel="stylesheet"></head>
   <body>
     <div class="container">
       <form class="form">
-        <div>
-          <label for="1">Розхід</label>
-          <input type="text" id="1" />
+        <div class="container_input">
+          <input class="input" type="number" name="average" id="1" />
+          <span for="1">Середній Розхід</span>
         </div>
-        <div>
-          <label for="1">Відстань</label>
-          <input type="text" id="2" />
+        <div class="container_input">
+          <input class="input" type="number" id="4" />
+          <span for="1">Ціна топлива</span>
         </div>
-        <div>
-          <label for="1">К-ть літрів</label>
-          <input type="text" id="3" />
+        <div class="container_input relative">
+          <!-- <button class="come" type="button">Туда і назад</button> -->
+          <input class="come" type="checkbox" id="switch" />
+          <label class="come_label" for="switch">Toggle</label>
+          <input class="input" type="number" id="2" />
+          <span for="1">Відстань</span>
         </div>
-        <div>
-          <label for="1">Розхід</label>
-          <input type="text" id="4" />
+        <div class="container_input">
+          <input class="input" type="number" id="3" />
+          <span for="1">К-ть літрів</span>
         </div>
-        <button type="submit">Calculate</button>
+        <div class="container_input">
+          <input class="input" type="number" id="4" />
+          <span for="1">Грн</span>
+        </div>
+        <button class="button-arounder" type="submit">Calculate</button>
       </form>
-      <div>
-        <span>Результат</span>
-        <span>Результат</span>
-      </div>
     </div>
   </body>
 </html>
