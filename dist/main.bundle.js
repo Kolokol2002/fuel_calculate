@@ -26,7 +26,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n// extracted by mini-css-extr
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/main.scss */ \"./src/styles/main.scss\");\n\r\nconsole.log(\"fdsf\");\r\n\n\n//# sourceURL=webpack://fuel_calculate/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/main.scss */ \"./src/styles/main.scss\");\n/* harmony import */ var _js_calculate__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./js/calculate */ \"./src/js/calculate.js\");\n\r\n\r\n\r\n(0,_js_calculate__WEBPACK_IMPORTED_MODULE_1__.calculate)();\r\n\n\n//# sourceURL=webpack://fuel_calculate/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/js/calculate.js":
+/*!*****************************!*\
+  !*** ./src/js/calculate.js ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"calculate\": () => (/* binding */ calculate)\n/* harmony export */ });\nfunction calculate() {\r\n  console.log(\"hello\");\r\n}\r\n\r\n\r\n\n\n//# sourceURL=webpack://fuel_calculate/./src/js/calculate.js?");
 
 /***/ })
 
@@ -57,6 +67,23 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sty
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
 /******/ 	(() => {
 /******/ 		// define __esModule on exports

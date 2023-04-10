@@ -1,2 +1,4 @@
 import "./styles/main.scss";
-console.log("fdsf");
+import { calculate } from "./js/calculate";
+
+calculate();
