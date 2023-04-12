@@ -13,6 +13,7 @@
     "browser-sync-webpack-plugin": "^2.3.0",
     "css-loader": "^6.7.3",
     "css-minimizer-webpack-plugin": "^5.0.0",
+    "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.7.5",
     "node-sass": "^8.0.0",
@@ -20,8 +21,12 @@
     "postcss-preset-env": "^8.3.1",
     "sass-loader": "^13.2.2",
     "style-loader": "^3.3.2",
+    "svg-inline-loader": "^0.8.2",
     "webpack": "^5.78.0",
     "webpack-cli": "^5.0.1",
     "webpack-dev-server": "^4.13.2"
+  },
+  "dependencies": {
+    "notiflix": "^3.2.6"
   }
 }

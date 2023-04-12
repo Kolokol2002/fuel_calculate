@@ -9,31 +9,78 @@
   <body>
     <div class="container">
       <form class="form">
-        <div class="container_input">
-          <input class="input" type="number" name="average" id="1" />
+        <div class="container_input relative">
+          <input
+            class="input setting"
+            type="number"
+            name="average"
+            id="1"
+            required
+          />
           <span for="1">Середній Розхід</span>
-        </div>
-        <div class="container_input">
-          <input class="input" type="number" id="4" />
-          <span for="1">Ціна топлива</span>
+          <div class="icon"></div>
         </div>
         <div class="container_input relative">
-          <!-- <button class="come" type="button">Туда і назад</button> -->
-          <input class="come" type="checkbox" id="switch" />
-          <label class="come_label" for="switch">Toggle</label>
-          <input class="input" type="number" id="2" />
-          <span for="1">Відстань</span>
+          <input
+            class="input setting"
+            type="number"
+            id="4"
+            step="0.1"
+            required
+          />
+          <span for="1">Ціна топлива</span>
+          <div class="icon"></div>
         </div>
-        <div class="container_input">
-          <input class="input" type="number" id="3" />
-          <span for="1">К-ть літрів</span>
+        <div class="js-inputs">
+          <div class="container_input">
+            <input
+              class="input"
+              type="number"
+              name="km"
+              id="2"
+              step="0.1"
+              required
+            />
+            <span for="1">Відстань</span>
+          </div>
+          <div class="container_input">
+            <input
+              class="input"
+              type="number"
+              name="fuel"
+              id="3"
+              step="0.1"
+              required
+            />
+            <span for="1">К-ть літрів</span>
+          </div>
+          <div class="container_input not_padding">
+            <input
+              class="input"
+              type="number"
+              name="cost"
+              id="4"
+              step="0.1"
+              required
+            />
+            <span for="1">Грн</span>
+          </div>
         </div>
-        <div class="container_input">
-          <input class="input" type="number" id="4" />
-          <span for="1">Грн</span>
-        </div>
-        <button class="button-arounder" type="submit">Calculate</button>
       </form>
+      <div class="container_switch">
+        <div class="relative">
+          <!-- <button class="come" type="button">Туда і назад</button> -->
+          <input
+            class="come"
+            type="checkbox"
+            name="switch"
+            id="switch"
+            required
+          />
+          <label class="come_label" for="switch">Toggle</label>
+        </div>
+        <span class="switch_text">x2</span>
+      </div>
     </div>
   </body>
 </html>

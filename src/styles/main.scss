@@ -12,40 +12,65 @@ body {
   font-family: "Sansita Swashed", cursive;
 }
 
+.icon {
+  position: absolute;
+  z-index: 99999999999999;
+  top: 0;
+  right: 0;
+  width: 35px;
+  height: 35px;
+  margin: 5px 10px;
+  // padding: 5px;
+  fill: blue;
+}
+
 .container {
   background-color: gray;
   width: 500px;
   border-radius: 25px;
   box-shadow: #000;
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
   position: relative;
-  padding: 50px 50px;
+  padding: 70px 50px 50px;
+  margin: 20px;
   background-color: #fff;
   box-shadow: 4px 33px 103px -30px rgba(0, 0, 0, 0.75);
 }
 
 .container_input {
   position: relative;
-  padding: 50px 100px;
+  padding: 45px 100px;
   width: auto;
   background: #fff;
   border-radius: 10px;
 }
 
-.container_input.relative {
+.container_switch {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+}
+.container_switch .relative {
+  height: 29px;
+  width: 60px;
+}
+
+.switch_text {
+  font-size: 20px;
+}
+
+.relative {
   position: relative;
+}
+
+.container_input.not_padding {
+  padding-bottom: 0;
 }
 
 .come {
   position: absolute;
-  // top: -36px;
-  // right: 0;
-  // width: fit-content;
-  // margin-left: auto;
-  // margin-bottom: 5px;
-  // cursor: pointer;
 }
 
 .come[type="checkbox"] {
@@ -56,11 +81,7 @@ body {
 
 .come_label {
   position: absolute;
-  top: -36px;
-  right: 15px;
   width: fit-content;
-  margin-left: auto;
-  margin-bottom: 5px;
   cursor: pointer;
   text-indent: -9999px;
   width: 60px;
@@ -135,6 +156,11 @@ body {
   font-size: 1em;
 }
 
+.input.setting {
+  // border-color: #9f9f9f;
+  // pointer-events: none;
+}
+
 .form {
   display: flex;
   flex-direction: column;
@@ -200,4 +226,8 @@ body {
   padding: 10px;
   border-radius: 10px;
   font-size: 1.2em;
+}
+
+.current_answer {
+  border-color: #1f9900 !important;
 }

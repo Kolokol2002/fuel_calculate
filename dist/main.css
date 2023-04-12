@@ -1,10 +1,15 @@
 /*!*********************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/main.scss ***!
   \*********************************************************************************************************************************************************/
+@import url(https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@600&display=swap);
+/*!*************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/main.scss (1) ***!
+  \*************************************************************************************************************************************************************/
 body {
-  height: 100vh;
-  overflow: hidden;
   margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -13,13 +18,42 @@ body {
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
-          align-items: center; }
+          align-items: center;
+  height: 100vh;
+  background: #d9d9d9;
+  font-family: "Sansita Swashed", cursive; }
+
+.icon {
+  position: absolute;
+  z-index: 99999999999999;
+  top: 0;
+  right: 0;
+  width: 30px;
+  height: 30px;
+  fill: blue; }
 
 .container {
   background-color: gray;
-  height: 600px;
   width: 500px;
   border-radius: 25px;
+  -webkit-box-shadow: #000;
+          box-shadow: #000;
+  position: relative;
+  padding: 70px 50px 50px;
+  margin: 20px;
+  background-color: #fff;
+  -webkit-box-shadow: 4px 33px 103px -30px rgba(0, 0, 0, 0.75);
+          box-shadow: 4px 33px 103px -30px rgba(0, 0, 0, 0.75); }
+
+.container_input {
+  position: relative;
+  padding: 45px 100px;
+  width: auto;
+  background: #fff;
+  border-radius: 10px; }
+
+.container_switch {
+  margin-top: 50px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -28,7 +62,108 @@ body {
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
-          align-items: center; }
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 5px; }
+
+.container_switch .relative {
+  height: 29px;
+  width: 60px; }
+
+.switch_text {
+  font-size: 20px; }
+
+.relative {
+  position: relative; }
+
+.container_input.not_padding {
+  padding-bottom: 0; }
+
+.come {
+  position: absolute; }
+
+.come[type="checkbox"] {
+  height: 0;
+  width: 0;
+  visibility: hidden; }
+
+.come_label {
+  position: absolute;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 60px;
+  height: 29px;
+  background: grey;
+  display: block;
+  border-radius: 100px; }
+
+.come_label:after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 21px;
+  height: 19px;
+  background: #fff;
+  border-radius: 90px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s; }
+
+.come:checked + .come_label {
+  background: #bada55; }
+
+.come:checked + .come_label:after {
+  left: calc(100% - 5px);
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%); }
+
+.come_label:active:after {
+  width: 30px; }
+
+.container_input .input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border: 2px solid #000;
+  outline: none;
+  background: none;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 1.2em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+.container_input input::-webkit-outer-spin-button,
+.container_input input::-webkit-inner-spin-button {
+  /* display: none; <- Crashes Chrome on hover */
+  -webkit-appearance: none;
+  margin: 0;
+  /* <-- Apparently some margin are still there even though it's hidden */ }
+
+.container_input:last-child {
+  margin-bottom: 0; }
+
+.container_input span {
+  position: absolute;
+  top: 14px;
+  left: 20px;
+  font-size: 1em;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+  font-family: sans-serif; }
+
+.container_input input:focus ~ span,
+.container_input input:valid ~ span {
+  -webkit-transform: translateX(-13px) translateY(-35px);
+          transform: translateX(-13px) translateY(-35px);
+  font-size: 1em; }
 
 .form {
   display: -webkit-box;
@@ -37,6 +172,69 @@ body {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
-          flex-direction: column;
-  gap: 20px; }
+          flex-direction: column; }
+
+.button-arounder {
+  background: white;
+  border: solid 2px black;
+  padding: 0.375em 1.125em;
+  font-size: 1rem; }
+
+.button-arounder {
+  height: 60px;
+  width: 200px;
+  margin: auto;
+  cursor: pointer;
+  font-size: 2rem;
+  background: #1b2e32;
+  color: #f1f3f4;
+  -webkit-box-shadow: 0 0px 0px rgba(11, 14, 15, 0.2);
+          box-shadow: 0 0px 0px rgba(11, 14, 15, 0.2);
+  transfrom: translateY(0);
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  --dur: 0.15s;
+  --delay: 0.15s;
+  --radius: 16px;
+  -webkit-transition: border-top-left-radius 0.15s 0.15s ease-out, border-top-right-radius 0.15s calc(0.15s * 2) ease-out, border-bottom-right-radius 0.15s calc(0.15s * 3) ease-out, border-bottom-left-radius 0.15s calc(0.15s * 4) ease-out, background calc(0.15s * 4) steps(4, jump-end), -webkit-box-shadow calc(0.15s * 4) ease-out, -webkit-transform calc(0.15s * 4) ease-out;
+  transition: border-top-left-radius 0.15s 0.15s ease-out, border-top-right-radius 0.15s calc(0.15s * 2) ease-out, border-bottom-right-radius 0.15s calc(0.15s * 3) ease-out, border-bottom-left-radius 0.15s calc(0.15s * 4) ease-out, background calc(0.15s * 4) steps(4, jump-end), -webkit-box-shadow calc(0.15s * 4) ease-out, -webkit-transform calc(0.15s * 4) ease-out;
+  transition: border-top-left-radius 0.15s 0.15s ease-out, border-top-right-radius 0.15s calc(0.15s * 2) ease-out, border-bottom-right-radius 0.15s calc(0.15s * 3) ease-out, border-bottom-left-radius 0.15s calc(0.15s * 4) ease-out, box-shadow calc(0.15s * 4) ease-out, transform calc(0.15s * 4) ease-out, background calc(0.15s * 4) steps(4, jump-end);
+  transition: border-top-left-radius 0.15s 0.15s ease-out, border-top-right-radius 0.15s calc(0.15s * 2) ease-out, border-bottom-right-radius 0.15s calc(0.15s * 3) ease-out, border-bottom-left-radius 0.15s calc(0.15s * 4) ease-out, box-shadow calc(0.15s * 4) ease-out, transform calc(0.15s * 4) ease-out, background calc(0.15s * 4) steps(4, jump-end), -webkit-box-shadow calc(0.15s * 4) ease-out, -webkit-transform calc(0.15s * 4) ease-out;
+  -webkit-transition: border-top-left-radius var(--dur) var(--delay) ease-out, border-top-right-radius var(--dur) calc(var(--delay) * 2) ease-out, border-bottom-right-radius var(--dur) calc(var(--delay) * 3) ease-out, border-bottom-left-radius var(--dur) calc(var(--delay) * 4) ease-out, background calc(var(--dur) * 4) steps(4, jump-end), -webkit-box-shadow calc(var(--dur) * 4) ease-out, -webkit-transform calc(var(--dur) * 4) ease-out;
+  transition: border-top-left-radius var(--dur) var(--delay) ease-out, border-top-right-radius var(--dur) calc(var(--delay) * 2) ease-out, border-bottom-right-radius var(--dur) calc(var(--delay) * 3) ease-out, border-bottom-left-radius var(--dur) calc(var(--delay) * 4) ease-out, background calc(var(--dur) * 4) steps(4, jump-end), -webkit-box-shadow calc(var(--dur) * 4) ease-out, -webkit-transform calc(var(--dur) * 4) ease-out;
+  transition: border-top-left-radius var(--dur) var(--delay) ease-out, border-top-right-radius var(--dur) calc(var(--delay) * 2) ease-out, border-bottom-right-radius var(--dur) calc(var(--delay) * 3) ease-out, border-bottom-left-radius var(--dur) calc(var(--delay) * 4) ease-out, box-shadow calc(var(--dur) * 4) ease-out, transform calc(var(--dur) * 4) ease-out, background calc(var(--dur) * 4) steps(4, jump-end);
+  transition: border-top-left-radius var(--dur) var(--delay) ease-out, border-top-right-radius var(--dur) calc(var(--delay) * 2) ease-out, border-bottom-right-radius var(--dur) calc(var(--delay) * 3) ease-out, border-bottom-left-radius var(--dur) calc(var(--delay) * 4) ease-out, box-shadow calc(var(--dur) * 4) ease-out, transform calc(var(--dur) * 4) ease-out, background calc(var(--dur) * 4) steps(4, jump-end), -webkit-box-shadow calc(var(--dur) * 4) ease-out, -webkit-transform calc(var(--dur) * 4) ease-out; }
+
+.button-arounder:hover,
+.button-arounder:focus {
+  -webkit-box-shadow: 0 4px 8px rgba(11, 14, 15, 0.2);
+          box-shadow: 0 4px 8px rgba(11, 14, 15, 0.2);
+  -webkit-transform: translateY(-4px);
+          transform: translateY(-4px);
+  background: #394dac;
+  border-top-left-radius: var(--radius);
+  border-top-right-radius: var(--radius);
+  border-bottom-left-radius: var(--radius);
+  border-bottom-right-radius: var(--radius); }
+
+.result_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly; }
+
+.result_container span {
+  border: 2px solid #000;
+  outline: none;
+  background: none;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 1.2em; }
+
+.current_answer {
+  border-color: #1f9900 !important; }
 
