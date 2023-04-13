@@ -82,5 +82,24 @@
         <span class="switch_text">x2</span>
       </div>
     </div>
+    <div class="container roads">
+      <div class="roads_inputs">
+        <!-- <input class="roads_input input_a" type="text" /> -->
+        <div class="container_input roads_container_input">
+          <input class="roads_input input input_a" required placeholder="" />
+          <span>Точка А</span>
+        </div>
+        <div class="container_input roads_container_input">
+          <input class="roads_input input input_b" required placeholder="" />
+          <span>Точка B</span>
+        </div>
+        <!-- <input class="roads_input input_b" type="text" /> -->
+      </div>
+      <button class="button_calculate" type="button">Calculate</button>
+    </div>
+    <script
+      async
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDkeirn_ig4ojMkhr_MdLNL4chBVAZ4weA&libraries=places&callback=initAutocomplete"
+    ></script>
   </body>
 </html>
