@@ -23,16 +23,6 @@ body {
   background: #d9d9d9;
   font-family: "Sansita Swashed", cursive; }
 
-.icon {
-  position: absolute;
-  z-index: 99999999999999;
-  top: 0;
-  right: 0;
-  width: 35px;
-  height: 35px;
-  margin: 5px 10px;
-  fill: blue; }
-
 .container {
   background-color: gray;
   width: 500px;
@@ -52,6 +42,80 @@ body {
   width: auto;
   background: #fff;
   border-radius: 10px; }
+
+.container_input.not_padding {
+  padding-bottom: 0; }
+
+.container_input .input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  border: 2px solid #000;
+  outline: none;
+  background: none;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 1.2em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+.container_input input::-webkit-outer-spin-button,
+.container_input input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0; }
+
+.container_input:last-child {
+  margin-bottom: 0; }
+
+.container_input span {
+  position: absolute;
+  top: 14px;
+  left: 20px;
+  font-size: 1em;
+  -webkit-transition: 0.6s;
+  transition: 0.6s;
+  font-family: sans-serif;
+  pointer-events: none; }
+
+.container_input input:focus ~ span,
+.container_input input:valid ~ span {
+  -webkit-transform: translateX(-13px) translateY(-35px);
+          transform: translateX(-13px) translateY(-35px);
+  font-size: 1em; }
+
+.js-inputs {
+  position: relative;
+  margin-top: 25px; }
+
+.js-inputs::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -147px);
+          transform: translate(-50%, -147px);
+  border-top: 2px solid #645d5d;
+  width: 40%; }
+
+.icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 35px;
+  height: 35px;
+  margin: 5px 10px;
+  fill: blue; }
+
+.form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; }
 
 .container_switch {
   margin-top: 50px;
@@ -79,9 +143,6 @@ body {
 
 .relative {
   position: relative; }
-
-.container_input.not_padding {
-  padding-bottom: 0; }
 
 .come {
   position: absolute; }
@@ -126,99 +187,6 @@ body {
 
 .come_label:active:after {
   width: 30px; }
-
-.container_input .input {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  border: 2px solid #000;
-  outline: none;
-  background: none;
-  padding: 10px;
-  border-radius: 10px;
-  font-size: 1.2em;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box; }
-
-.container_input input::-webkit-outer-spin-button,
-.container_input input::-webkit-inner-spin-button {
-  /* display: none; <- Crashes Chrome on hover */
-  -webkit-appearance: none;
-  margin: 0;
-  /* <-- Apparently some margin are still there even though it's hidden */ }
-
-.container_input:last-child {
-  margin-bottom: 0; }
-
-.container_input span {
-  position: absolute;
-  top: 14px;
-  left: 20px;
-  font-size: 1em;
-  -webkit-transition: 0.6s;
-  transition: 0.6s;
-  font-family: sans-serif; }
-
-.container_input input:focus ~ span,
-.container_input input:valid ~ span {
-  -webkit-transform: translateX(-13px) translateY(-35px);
-          transform: translateX(-13px) translateY(-35px);
-  font-size: 1em; }
-
-.form {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column; }
-
-.button-arounder {
-  background: white;
-  border: solid 2px black;
-  padding: 0.375em 1.125em;
-  font-size: 1rem; }
-
-.button-arounder {
-  height: 60px;
-  width: 200px;
-  margin: auto;
-  cursor: pointer;
-  font-size: 2rem;
-  background: #1b2e32;
-  color: #f1f3f4;
-  -webkit-box-shadow: 0 0px 0px rgba(11, 14, 15, 0.2);
-          box-shadow: 0 0px 0px rgba(11, 14, 15, 0.2);
-  transfrom: translateY(0);
-  border-top-left-radius: 0px;
-  border-top-right-radius: 0px;
-  border-bottom-left-radius: 0px;
-  border-bottom-right-radius: 0px;
-  --dur: 0.15s;
-  --delay: 0.15s;
-  --radius: 16px;
-  -webkit-transition: border-top-left-radius 0.15s 0.15s ease-out, border-top-right-radius 0.15s calc(0.15s * 2) ease-out, border-bottom-right-radius 0.15s calc(0.15s * 3) ease-out, border-bottom-left-radius 0.15s calc(0.15s * 4) ease-out, background calc(0.15s * 4) steps(4, jump-end), -webkit-box-shadow calc(0.15s * 4) ease-out, -webkit-transform calc(0.15s * 4) ease-out;
-  transition: border-top-left-radius 0.15s 0.15s ease-out, border-top-right-radius 0.15s calc(0.15s * 2) ease-out, border-bottom-right-radius 0.15s calc(0.15s * 3) ease-out, border-bottom-left-radius 0.15s calc(0.15s * 4) ease-out, background calc(0.15s * 4) steps(4, jump-end), -webkit-box-shadow calc(0.15s * 4) ease-out, -webkit-transform calc(0.15s * 4) ease-out;
-  transition: border-top-left-radius 0.15s 0.15s ease-out, border-top-right-radius 0.15s calc(0.15s * 2) ease-out, border-bottom-right-radius 0.15s calc(0.15s * 3) ease-out, border-bottom-left-radius 0.15s calc(0.15s * 4) ease-out, box-shadow calc(0.15s * 4) ease-out, transform calc(0.15s * 4) ease-out, background calc(0.15s * 4) steps(4, jump-end);
-  transition: border-top-left-radius 0.15s 0.15s ease-out, border-top-right-radius 0.15s calc(0.15s * 2) ease-out, border-bottom-right-radius 0.15s calc(0.15s * 3) ease-out, border-bottom-left-radius 0.15s calc(0.15s * 4) ease-out, box-shadow calc(0.15s * 4) ease-out, transform calc(0.15s * 4) ease-out, background calc(0.15s * 4) steps(4, jump-end), -webkit-box-shadow calc(0.15s * 4) ease-out, -webkit-transform calc(0.15s * 4) ease-out;
-  -webkit-transition: border-top-left-radius var(--dur) var(--delay) ease-out, border-top-right-radius var(--dur) calc(var(--delay) * 2) ease-out, border-bottom-right-radius var(--dur) calc(var(--delay) * 3) ease-out, border-bottom-left-radius var(--dur) calc(var(--delay) * 4) ease-out, background calc(var(--dur) * 4) steps(4, jump-end), -webkit-box-shadow calc(var(--dur) * 4) ease-out, -webkit-transform calc(var(--dur) * 4) ease-out;
-  transition: border-top-left-radius var(--dur) var(--delay) ease-out, border-top-right-radius var(--dur) calc(var(--delay) * 2) ease-out, border-bottom-right-radius var(--dur) calc(var(--delay) * 3) ease-out, border-bottom-left-radius var(--dur) calc(var(--delay) * 4) ease-out, background calc(var(--dur) * 4) steps(4, jump-end), -webkit-box-shadow calc(var(--dur) * 4) ease-out, -webkit-transform calc(var(--dur) * 4) ease-out;
-  transition: border-top-left-radius var(--dur) var(--delay) ease-out, border-top-right-radius var(--dur) calc(var(--delay) * 2) ease-out, border-bottom-right-radius var(--dur) calc(var(--delay) * 3) ease-out, border-bottom-left-radius var(--dur) calc(var(--delay) * 4) ease-out, box-shadow calc(var(--dur) * 4) ease-out, transform calc(var(--dur) * 4) ease-out, background calc(var(--dur) * 4) steps(4, jump-end);
-  transition: border-top-left-radius var(--dur) var(--delay) ease-out, border-top-right-radius var(--dur) calc(var(--delay) * 2) ease-out, border-bottom-right-radius var(--dur) calc(var(--delay) * 3) ease-out, border-bottom-left-radius var(--dur) calc(var(--delay) * 4) ease-out, box-shadow calc(var(--dur) * 4) ease-out, transform calc(var(--dur) * 4) ease-out, background calc(var(--dur) * 4) steps(4, jump-end), -webkit-box-shadow calc(var(--dur) * 4) ease-out, -webkit-transform calc(var(--dur) * 4) ease-out; }
-
-.button-arounder:hover,
-.button-arounder:focus {
-  -webkit-box-shadow: 0 4px 8px rgba(11, 14, 15, 0.2);
-          box-shadow: 0 4px 8px rgba(11, 14, 15, 0.2);
-  -webkit-transform: translateY(-4px);
-          transform: translateY(-4px);
-  background: #394dac;
-  border-top-left-radius: var(--radius);
-  border-top-right-radius: var(--radius);
-  border-bottom-left-radius: var(--radius);
-  border-bottom-right-radius: var(--radius); }
 
 .result_container {
   display: -webkit-box;
