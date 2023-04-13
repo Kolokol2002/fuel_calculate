@@ -6,6 +6,7 @@ const importantInputsEl = document.querySelectorAll(".input");
 const comeEl = document.querySelector(".come");
 const inputsEl = document.querySelector(".js-inputs");
 const iconsEl = document.querySelectorAll(".icon");
+const buttonEl = document.querySelector(".button_calculate");
 
 iconsEl.forEach((el) => {
   el.style.background = `url('${changeIcon}')`;
@@ -22,6 +23,7 @@ priceFuel.addEventListener("input", onStrogatePriceFuel);
 inputsEl.addEventListener("input", onInput);
 inputsEl.addEventListener("click", onFocusInput);
 comeEl.addEventListener("change", onSet);
+buttonEl.addEventListener("click", distant);
 
 function onInput(e) {
   e.preventDefault();
@@ -98,3 +100,103 @@ function onFocusInput(e) {
     // el.classList.remove("current_answer");
   });
 }
+
+let cordA = null;
+let cordB = null;
+
+function initAutocomplete() {
+  const inputA = document.querySelector(".input_a");
+  const inputB = document.querySelector(".input_b");
+
+  const searchBoxA = new google.maps.places.SearchBox(inputA);
+  const searchBoxB = new google.maps.places.SearchBox(inputB);
+
+  let markers = [];
+
+  searchBoxA.addListener("places_changed", () => {
+    const places = searchBoxA.getPlaces();
+
+    if (places.length == 0) {
+      return;
+    }
+
+    markers.forEach((marker) => {
+      marker.setMap(null);
+    });
+    markers = [];
+
+    // For each place, get the icon, name and location.
+    const bounds = new google.maps.LatLngBounds();
+
+    places.forEach((place) => {
+      if (!place.geometry || !place.geometry.location) {
+        console.log("Returned place contains no geometry");
+        return;
+      }
+      if (place.geometry.viewport) {
+        // Only geocodes have viewport.
+        bounds.union(place.geometry.viewport);
+      } else {
+        bounds.extend(place.geometry.location);
+      }
+    });
+    // map.fitBounds(bounds);
+    cordA = bounds;
+  });
+
+  searchBoxB.addListener("places_changed", () => {
+    const places = searchBoxB.getPlaces();
+
+    if (places.length == 0) {
+      return;
+    }
+
+    markers.forEach((marker) => {
+      marker.setMap(null);
+    });
+    markers = [];
+
+    // For each place, get the icon, name and location.
+    const bounds = new google.maps.LatLngBounds();
+
+    places.forEach((place) => {
+      if (!place.geometry || !place.geometry.location) {
+        console.log("Returned place contains no geometry");
+        return;
+      }
+      if (place.geometry.viewport) {
+        // Only geocodes have viewport.
+        bounds.union(place.geometry.viewport);
+      } else {
+        bounds.extend(place.geometry.location);
+      }
+    });
+    // map.fitBounds(bounds);
+    cordB = bounds;
+  });
+}
+
+function distant() {
+  const service = new google.maps.DistanceMatrixService();
+  console.log(cordA);
+  const A = { lat: cordA.Va.lo, lng: cordA.Ha.lo };
+  const B = { lat: cordB.Va.lo, lng: cordB.Ha.lo };
+  const request = {
+    origins: [A],
+    destinations: [B],
+    travelMode: google.maps.TravelMode.DRIVING,
+    unitSystem: google.maps.UnitSystem.METRIC,
+  };
+
+  service.getDistanceMatrix(request).then((response) => {
+    const { distance, duration } = response.rows[0].elements[0];
+    km.focus();
+    outlineInput(km);
+    km.value = (distance.value / 1000).toFixed(1);
+    fuel.value = ((average.value * km.value) / 100).toFixed(1);
+    cost.value = (fuel.value * priceFuel.value).toFixed(1);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+}
+
+window.initAutocomplete = initAutocomplete;
