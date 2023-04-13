@@ -7,6 +7,8 @@ const comeEl = document.querySelector(".come");
 const inputsEl = document.querySelector(".js-inputs");
 const iconsEl = document.querySelectorAll(".icon");
 const buttonEl = document.querySelector(".button_calculate");
+const inputA = document.querySelector(".input_a");
+const inputB = document.querySelector(".input_b");
 
 iconsEl.forEach((el) => {
   el.style.background = `url('${changeIcon}')`;
@@ -24,6 +26,8 @@ inputsEl.addEventListener("input", onInput);
 inputsEl.addEventListener("click", onFocusInput);
 comeEl.addEventListener("change", onSet);
 buttonEl.addEventListener("click", distant);
+inputA.addEventListener("click", onClearInputAddress);
+inputB.addEventListener("click", onClearInputAddress);
 
 function onInput(e) {
   e.preventDefault();
@@ -101,13 +105,14 @@ function onFocusInput(e) {
   });
 }
 
+function onClearInputAddress(e) {
+  e.target.value = "";
+}
+
 let cordA = null;
 let cordB = null;
 
 function initAutocomplete() {
-  const inputA = document.querySelector(".input_a");
-  const inputB = document.querySelector(".input_b");
-
   const searchBoxA = new google.maps.places.SearchBox(inputA);
   const searchBoxB = new google.maps.places.SearchBox(inputB);
 
@@ -190,7 +195,6 @@ function distant() {
 
   service.getDistanceMatrix(request).then((response) => {
     const { distance, duration } = response.rows[0].elements[0];
-    km.focus();
     outlineInput(km);
     km.value = (distance.value / 1000).toFixed(1);
     fuel.value = ((average.value * km.value) / 100).toFixed(1);
