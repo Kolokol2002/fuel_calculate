@@ -7,7 +7,6 @@ const comeEl = document.querySelector(".come");
 const inputsEl = document.querySelector(".js-inputs");
 const iconsEl = document.querySelectorAll(".icon");
 
-// console.dir(iconsEl);
 iconsEl.forEach((el) => {
   el.style.background = `url('${changeIcon}')`;
   el.addEventListener("click", onChangeSettings);
@@ -21,8 +20,8 @@ priceFuel.value = localStorage.getItem("priceFuel") ?? "";
 average.addEventListener("input", onStrogateAverage);
 priceFuel.addEventListener("input", onStrogatePriceFuel);
 inputsEl.addEventListener("input", onInput);
+inputsEl.addEventListener("click", onFocusInput);
 comeEl.addEventListener("change", onSet);
-iconsEl;
 
 function onInput(e) {
   e.preventDefault();
@@ -38,12 +37,11 @@ function onInput(e) {
   if (e.target.value === "") {
     [km, fuel, cost].forEach((el) => {
       el.value = "";
-      el.classList.remove("current_answer");
+      // el.classList.remove("current_answer");
     });
     return;
   }
   comeEl.checked = false;
-  outlineInput(e.target);
   if (e.target.name === "km") {
     fuel.value = ((average.value * km.value) / 100).toFixed(1);
     cost.value = (fuel.value * priceFuel.value).toFixed(1);
@@ -65,6 +63,9 @@ function onStrogatePriceFuel(e) {
 }
 
 function onSet(e) {
+  if ([km, fuel, cost].every((el) => el.value === "")) {
+    return;
+  }
   if (e.target.checked) {
     [km, fuel, cost].forEach((el) => (el.value *= (2).toFixed(1)));
   } else {
@@ -85,4 +86,15 @@ function outlineInput(curentInput) {
 function onChangeSettings(e) {
   const currentEl = e.target.parentElement.children[0];
   currentEl.classList.toggle("setting");
+}
+
+function onFocusInput(e) {
+  if (!e.target.classList.contains("input")) {
+    return;
+  }
+  outlineInput(e.target);
+  [km, fuel, cost].forEach((el) => {
+    el.value = "";
+    // el.classList.remove("current_answer");
+  });
 }
