@@ -116,8 +116,6 @@ function initAutocomplete() {
   const searchBoxA = new google.maps.places.SearchBox(inputA);
   const searchBoxB = new google.maps.places.SearchBox(inputB);
 
-  let markers = [];
-
   searchBoxA.addListener("places_changed", () => {
     const places = searchBoxA.getPlaces();
 
@@ -125,12 +123,6 @@ function initAutocomplete() {
       return;
     }
 
-    markers.forEach((marker) => {
-      marker.setMap(null);
-    });
-    markers = [];
-
-    // For each place, get the icon, name and location.
     const bounds = new google.maps.LatLngBounds();
 
     places.forEach((place) => {
@@ -155,11 +147,6 @@ function initAutocomplete() {
     if (places.length == 0) {
       return;
     }
-
-    markers.forEach((marker) => {
-      marker.setMap(null);
-    });
-    markers = [];
 
     // For each place, get the icon, name and location.
     const bounds = new google.maps.LatLngBounds();
