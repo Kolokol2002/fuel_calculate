@@ -171,8 +171,8 @@ function initAutocomplete() {
 function distant() {
   const service = new google.maps.DistanceMatrixService();
   console.log(cordA);
-  const A = { lat: cordA.Va.lo, lng: cordA.Ha.lo };
-  const B = { lat: cordB.Va.lo, lng: cordB.Ha.lo };
+  const A = { lat: cordA.Ua.lo, lng: cordA.Ha.lo };
+  const B = { lat: cordB.Ua.lo, lng: cordB.Ha.lo };
   const request = {
     origins: [A],
     destinations: [B],
